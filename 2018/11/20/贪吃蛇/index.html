@@ -5,11 +5,11 @@
   
 
   
-  <title>Hexo</title>
+  <title>Gready Snake | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Gready Snake">
 <meta property="og:url" content="http://yoursite.com/2018/11/20/贪吃蛇/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
@@ -17,9 +17,9 @@
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇类图.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/蛇移动.JPG">
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/捕获.PNG">
-<meta property="og:updated_time" content="2018-11-20T07:54:30.000Z">
+<meta property="og:updated_time" content="2018-11-20T08:31:34.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Gready Snake">
 <meta name="twitter:description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇类图.jpg">
   
@@ -71,12 +71,22 @@
         <section id="main"><article id="post-贪吃蛇" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/20/贪吃蛇/" class="article-date">
-  <time datetime="2018-11-20T07:56:17.250Z" itemprop="datePublished">2018-11-20</time>
+  <time datetime="2018-11-19T16:00:00.000Z" itemprop="datePublished">2018-11-20</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Gready Snake
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -94,9 +104,7 @@
 <li>蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir<br>另外主要的操纵有移动move，吃苹果tryeat，改变运动方向changDirect,<br>判断是否撞墙hitwall和是否是否吃到自己eatItself的操作。</li>
 <li>苹果类具有一个坐标（x,y）数据成员，具有一个随机产生一个新苹果newApple操作</li>
 <li>墙类具有两个点数据成员，用来限定一个矩形的蛇运动范围</li>
-<li><p>ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。<br>类图<br><img src="./贪吃蛇类图.jpg" alt="贪食蛇类图 text"><br>##主程序框架<br>main函数来说明</p>
-<p> int main(){</p>
-<pre><code>initGame();//初始化游戏
+<li>ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。<br>类图<br><img src="./贪吃蛇类图.jpg" alt="贪食蛇类图 text"><br>##主程序框架<br>main函数来说明<br> int main(){<pre><code>initGame();//初始化游戏
 do{
     keybordControl();//按键控制
     handlelogic();//处理游戏逻辑
@@ -104,9 +112,9 @@ do{
     sleep(10);//控制帧率
  }while(isGameRuning);
 return 0;
-</code></pre><p> }<br>keybordControl( )的功能：接受键盘按键输入，主要利用VS自带的GetAsyncKeyState()函数来实现。<br>handlelogic( )功能：处理游戏运行逻辑，比如说何时结束游戏，如何加速等主要工作。<br>draw( )功能：在处理完游戏逻辑后，将每个对象的图形绘制在窗口中。<br>sleep(10) 功能：控制图形的刷新帧率。如果不添加一个计算间隔时间，动画将会一闪一闪的。</p>
-</li>
+</code></pre> }</li>
 </ol>
+<p>keybordControl( )的功能：接受键盘按键输入，主要利用VS自带的GetAsyncKeyState()函数来实现。<br>handlelogic( )功能：处理游戏运行逻辑，比如说何时结束游戏，如何加速等主要工作。<br>draw( )功能：在处理完游戏逻辑后，将每个对象的图形绘制在窗口中。<br>sleep(10) 功能：控制图形的刷新帧率。如果不添加一个计算间隔时间，动画将会一闪一闪的。</p>
 <p>主程序的运行流程是：isGameRuning是一个初始化为1的全局变量，用来控制整个程序运行与否。<br>首先判断isGameRuning是否为真，如果是就进入循环，接受按键，处理游戏逻辑，绘制图形形成<br>图像。刷新一幅一幅的图形就成了动画，这就解决了开头的问题。</p>
 <p>##游戏逻辑<br>思路：</p>
 <ol>
@@ -315,7 +323,7 @@ default:
       <ul>
         
           <li>
-            <a href="/2018/11/20/贪吃蛇/">(no title)</a>
+            <a href="/2018/11/20/贪吃蛇/">Gready Snake</a>
           </li>
         
           <li>
