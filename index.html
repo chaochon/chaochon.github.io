@@ -62,10 +62,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-贪吃蛇" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-GreedySnake" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/20/贪吃蛇/" class="article-date">
-  <time datetime="2018-11-19T16:00:00.000Z" itemprop="datePublished">2018-11-20</time>
+    <a href="/2018/11/20/GreedySnake/" class="article-date">
+  <time datetime="2018-11-20T09:45:49.000Z" itemprop="datePublished">2018-11-20</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/20/贪吃蛇/">Gready Snake</a>
+      <a class="article-title" href="/2018/11/20/GreedySnake/">GreedySnake</a>
     </h1>
   
 
@@ -86,24 +86,55 @@
       
         <h1 id="贪吃蛇"><a href="#贪吃蛇" class="headerlink" title="贪吃蛇"></a>贪吃蛇</h1><h2 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h2><ol>
 <li>如何实时的从键盘中读入控制按键，并且蛇及时地响应？</li>
-<li>如何让蛇动起来，形成动画？</li>
+<li>如何让蛇动起来，形成动画？<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2>主要参与者：一个玩家<br>关注点：希望能够记录成绩，并列在排行榜上<br>主成功场景：</li>
+<li>玩家输入ID，游戏进行初始化</li>
+<li>玩家启动游戏，进行游戏活动</li>
+<li>游戏结束，显示玩家成绩的排名</li>
 </ol>
-<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">主要参与者：一个玩家</span><br><span class="line">关注点：希望能够记录成绩，并列在排行榜上</span><br><span class="line">主成功场景：</span><br><span class="line">1. 玩家输入ID，游戏进行初始化</span><br><span class="line">2. 玩家启动游戏，进行游戏活动</span><br><span class="line">3. 游戏结束，显示玩家成绩的排名</span><br></pre></td></tr></table></figure>
-<p>##对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">主要有四个对象，蛇，苹果，墙，和界面中数据。</span><br><span class="line">1. 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir</span><br><span class="line">另外主要的操纵有移动move，吃苹果tryeat，改变运动方向changDirect,</span><br><span class="line">判断是否撞墙hitwall和是否是否吃到自己eatItself的操作。</span><br><span class="line">2. 苹果类具有一个坐标（x,y）数据成员，具有一个随机产生一个新苹果newApple操作</span><br><span class="line">3. 墙类具有两个点数据成员，用来限定一个矩形的蛇运动范围</span><br><span class="line">4. ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。</span><br></pre></td></tr></table></figure></p>
-<p>类图<br><img src="/2018/11/20/贪吃蛇/贪吃蛇类图.jpg" alt="贪食蛇类图 text"></p>
-<p>##主程序框架</p>
-<p>main函数来说明<br>    int main(){<br>        initGame();//初始化游戏<br>        do{<br>            keybordControl();//按键控制<br>            handlelogic();//处理游戏逻辑<br>            draw();//绘图<br>            sleep(10);//控制帧率<br>         }while(isGameRuning);<br>        return 0;<br>    }<br>keybordControl( )的功能：接受键盘按键输入，主要利用VS自带的GetAsyncKeyState()函数来实现。<br>handlelogic( )功能：处理游戏运行逻辑，比如说何时结束游戏，如何加速等主要工作。<br>draw( )功能：在处理完游戏逻辑后，将每个对象的图形绘制在窗口中。<br>sleep(10) 功能：控制图形的刷新帧率。如果不添加一个计算间隔时间，动画将会一闪一闪的。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>主要有四个对象，蛇，苹果，墙，和界面中数据。</p>
+<ol>
+<li>蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir<br>另外主要的操纵有移动move，吃苹果tryeat，改变运动方向changDirect,<br>判断是否撞墙hitwall和是否是否吃到自己eatItself的操作。</li>
+<li>苹果类具有一个坐标（x,y）数据成员，具有一个随机产生一个新苹果newApple操作</li>
+<li>墙类具有两个点数据成员，用来限定一个矩形的蛇运动范围</li>
+<li>ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。</li>
+</ol>
+<p>类图</p>
+<h2 id="主程序框架"><a href="#主程序框架" class="headerlink" title="主程序框架"></a>主程序框架</h2><p>main函数来说明</p>
+<pre><code>int main(){
+    initGame();//初始化游戏
+    do{
+        keybordControl();//按键控制
+        handlelogic();//处理游戏逻辑
+        draw();//绘图
+        sleep(10);//控制帧率
+     }while(isGameRuning);
+    return 0;
+}
+</code></pre><p>keybordControl( )的功能：接受键盘按键输入，主要利用VS自带的GetAsyncKeyState()函数来实现。<br>handlelogic( )功能：处理游戏运行逻辑，比如说何时结束游戏，如何加速等主要工作。<br>draw( )功能：在处理完游戏逻辑后，将每个对象的图形绘制在窗口中。<br>sleep(10) 功能：控制图形的刷新帧率。如果不添加一个计算间隔时间，动画将会一闪一闪的。</p>
 <p>主程序的运行流程是：isGameRuning是一个初始化为1的全局变量，用来控制整个程序运行与否。<br>首先判断isGameRuning是否为真，如果是就进入循环，接受按键，处理游戏逻辑，绘制图形形成<br>图像。刷新一幅一幅的图形就成了动画，这就解决了开头的问题。</p>
-<p>##游戏逻辑</p>
-<p>思路：</p>
+<h2 id="游戏逻辑"><a href="#游戏逻辑" class="headerlink" title="游戏逻辑"></a>游戏逻辑</h2><p>思路：</p>
 <ol>
 <li>首先判断游戏是否结束，如果是这return退出函数</li>
 <li>判断蛇的下一个位置是否咬到自己或者撞墙，如果是则全局变量GameOver置为真</li>
 <li>判断蛇的下一个位置是否吃到苹果，如果是则将苹果头插法加入蛇不移动，随机生成一个新苹果<br>并增加成绩（成绩达到条件就蛇加速），否则就蛇移动一步。</li>
 </ol>
-<p>代码实现如下<br>    void handleLogic(){<br>        if (GameOver)<br>            return;<br>        /<em>判断下一位置是否吃到自己或者撞墙</em>/<br>        if (snake.eatItself() || snake.hitwall(wall)){<br>            GameOver = true;<br>        }<br>        if (snake.tryeat(apple)){<br>            apple.newApple();<br>            ui.inc();<br>        }<br>        else<br>            snake.move();<br>    } </p>
-<p>##蛇移动的实现</p>
-<p>蛇的移动如下图所示<br><img src="/2018/11/20/贪吃蛇/蛇移动.JPG" alt="Alt text"><br>思路：</p>
+<p>代码实现如下</p>
+<pre><code>void handleLogic(){
+    if (GameOver)
+        return;
+    /*判断下一位置是否吃到自己或者撞墙*/
+    if (snake.eatItself() || snake.hitwall(wall)){
+        GameOver = true;
+    }
+    if (snake.tryeat(apple)){
+        apple.newApple();
+        ui.inc();
+    }
+    else
+        snake.move();
+} 
+</code></pre><h2 id="蛇移动的实现"><a href="#蛇移动的实现" class="headerlink" title="蛇移动的实现"></a>蛇移动的实现</h2><p>蛇的移动如下图所示</p>
+<p>思路：</p>
 <ol>
 <li>头节点依照自身的方向移动一格</li>
 <li><p>接下来只需要将后一个节点移动到前一个节点的位置<br>需要注意的是，在每个节点移动以前要用pre变量将前一个节点位置保持下来<br>代码如下：</p>
@@ -135,11 +166,11 @@ do{
     prey = cury;
     p = p-&gt;next;
 } while (p-&gt;next != NULL);
-</code></pre><p> }<br>注意在EaxyX图形库中，默认坐标系是，X轴以横向向右为正，Y轴纵向向下为正。</p>
+</code></pre><p> }</p>
 </li>
 </ol>
-<p>##判定碰撞、吃自身和吃苹果的实现</p>
-<p>这三个操作的实现大同小异所以写一起<br>撞墙思路：</p>
+<p>注意在EaxyX图形库中，默认坐标系是，X轴以横向向右为正，Y轴纵向向下为正。</p>
+<h2 id="判定碰撞、吃自身和吃苹果的实现"><a href="#判定碰撞、吃自身和吃苹果的实现" class="headerlink" title="判定碰撞、吃自身和吃苹果的实现"></a>判定碰撞、吃自身和吃苹果的实现</h2><p>这三个操作的实现大同小异所以写一起<br>撞墙思路：</p>
 <ol>
 <li>蛇头依据自身方向算出下一个节点坐标</li>
 <li>判断该节点坐标是否在围墙范围之内，如是则返回假，否则返回真</li>
@@ -200,8 +231,7 @@ return false;
     }
     return false;
     }
-</code></pre><p>##改变蛇方向的实现</p>
-<p>思路：</p>
+</code></pre><h2 id="改变蛇方向的实现"><a href="#改变蛇方向的实现" class="headerlink" title="改变蛇方向的实现"></a>改变蛇方向的实现</h2><p>思路：</p>
 <ol>
 <li>依据接收到的按键指令分成两类 上下和左右</li>
 <li>如果是上下，则判断按键指令是否为左右，如是则赋值改变蛇方向，否则不变方向</li>
@@ -225,17 +255,13 @@ default:
 </code></pre><p> }</p>
 </li>
 </ol>
-<p>##运行结果</p>
-<p><img src="/2018/11/20/贪吃蛇/捕获.PNG" alt="Alt text"></p>
-<p>##结束语</p>
-<ol>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ol>
 <li>写这个一方面是为了准备下周PPT讲解贪食蛇而梳理一下思路，另一方面是为了练习一下写作，</li>
 <li>还可以熟悉一下写博客的流程，弄着玩。</li>
 <li>还有一个排行榜功能没有实现</li>
 </ol>
 <p>这个博客还可以改进，但是不想再花时间修改了。</p>
-<p>##参考</p>
-<p>参考知乎上大佬</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>参考知乎上大佬</p>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/39597457" target="_blank" rel="noopener">你们要的贪吃蛇C++手把手教学来啦</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/40465852" target="_blank" rel="noopener">你们要的贪吃蛇C++手把手教学来啦（二）</a></li>
@@ -244,7 +270,222 @@ default:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/20/贪吃蛇/" data-id="cjopi12950000jwr2znxj1u09" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/20/GreedySnake/" data-id="cjopmwxx70000u4r2i55fa100" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-snake" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/20/snake/" class="article-date">
+  <time datetime="2018-11-19T16:00:00.000Z" itemprop="datePublished">2018-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/20/snake/">Gready Snake</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="贪吃蛇"><a href="#贪吃蛇" class="headerlink" title="贪吃蛇"></a>贪吃蛇</h1><h2 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h2><ol>
+<li>如何实时的从键盘中读入控制按键，并且蛇及时地响应？</li>
+<li>如何让蛇动起来，形成动画？<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2>主要参与者：一个玩家<br>关注点：希望能够记录成绩，并列在排行榜上<br>主成功场景：</li>
+<li>玩家输入ID，游戏进行初始化</li>
+<li>玩家启动游戏，进行游戏活动</li>
+<li>游戏结束，显示玩家成绩的排名<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2>主要有四个对象，蛇，苹果，墙，和界面中数据。</li>
+<li>蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir<br>另外主要的操纵有移动move，吃苹果tryeat，改变运动方向changDirect,<br>判断是否撞墙hitwall和是否是否吃到自己eatItself的操作。</li>
+<li>苹果类具有一个坐标（x,y）数据成员，具有一个随机产生一个新苹果newApple操作</li>
+<li>墙类具有两个点数据成员，用来限定一个矩形的蛇运动范围</li>
+<li>ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。</li>
+</ol>
+<p>类图</p>
+<h2 id="主程序框架"><a href="#主程序框架" class="headerlink" title="主程序框架"></a>主程序框架</h2><p>main函数来说明</p>
+<pre><code>int main(){
+    initGame();//初始化游戏
+    do{
+        keybordControl();//按键控制
+        handlelogic();//处理游戏逻辑
+        draw();//绘图
+        sleep(10);//控制帧率
+     }while(isGameRuning);
+    return 0;
+}
+</code></pre><p>keybordControl( )的功能：接受键盘按键输入，主要利用VS自带的GetAsyncKeyState()函数来实现。<br>handlelogic( )功能：处理游戏运行逻辑，比如说何时结束游戏，如何加速等主要工作。<br>draw( )功能：在处理完游戏逻辑后，将每个对象的图形绘制在窗口中。<br>sleep(10) 功能：控制图形的刷新帧率。如果不添加一个计算间隔时间，动画将会一闪一闪的。</p>
+<p>主程序的运行流程是：isGameRuning是一个初始化为1的全局变量，用来控制整个程序运行与否。<br>首先判断isGameRuning是否为真，如果是就进入循环，接受按键，处理游戏逻辑，绘制图形形成<br>图像。刷新一幅一幅的图形就成了动画，这就解决了开头的问题。</p>
+<h2 id="游戏逻辑"><a href="#游戏逻辑" class="headerlink" title="游戏逻辑"></a>游戏逻辑</h2><p>思路：</p>
+<ol>
+<li>首先判断游戏是否结束，如果是这return退出函数</li>
+<li>判断蛇的下一个位置是否咬到自己或者撞墙，如果是则全局变量GameOver置为真</li>
+<li>判断蛇的下一个位置是否吃到苹果，如果是则将苹果头插法加入蛇不移动，随机生成一个新苹果<br>并增加成绩（成绩达到条件就蛇加速），否则就蛇移动一步。</li>
+</ol>
+<p>代码实现如下</p>
+<pre><code>void handleLogic(){
+    if (GameOver)
+        return;
+    /*判断下一位置是否吃到自己或者撞墙*/
+    if (snake.eatItself() || snake.hitwall(wall)){
+        GameOver = true;
+    }
+    if (snake.tryeat(apple)){
+        apple.newApple();
+        ui.inc();
+    }
+    else
+        snake.move();
+} 
+</code></pre><h2 id="蛇移动的实现"><a href="#蛇移动的实现" class="headerlink" title="蛇移动的实现"></a>蛇移动的实现</h2><p>蛇的移动如下图所示</p>
+<p>思路：</p>
+<ol>
+<li>头节点依照自身的方向移动一格</li>
+<li><p>接下来只需要将后一个节点移动到前一个节点的位置<br>需要注意的是，在每个节点移动以前要用pre变量将前一个节点位置保持下来<br>代码如下：</p>
+<p> void Snake::move(){</p>
+<pre><code>int xofset[4] = { 0, 0, -1, 1 };
+int yofset[4] = { -1, 1, 0, 0 };
+/*控制游戏速度*/
+int intervalTime = 100 - Speed;
+static int lastMoveTick = 0;
+int curTicktime = GetTickCount();
+if (curTicktime - lastMoveTick &lt; intervalTime){
+    return;
+}
+lastMoveTick = curTicktime;
+/*控制游戏速度end*/
+LinkList p = body;
+int prex = p-&gt;next-&gt;data.x;
+int prey = p-&gt;next-&gt;data.y;
+
+p-&gt;next-&gt;data.x += xofset[dir];
+p-&gt;next-&gt;data.y += yofset[dir];
+p = p-&gt;next;
+do{
+    int curx = p-&gt;next-&gt;data.x;
+    int cury = p-&gt;next-&gt;data.y;
+    p-&gt;next-&gt;data.x = prex;
+    p-&gt;next-&gt;data.y = prey;
+    prex = curx;
+    prey = cury;
+    p = p-&gt;next;
+} while (p-&gt;next != NULL);
+</code></pre><p> }</p>
+</li>
+</ol>
+<p>注意在EaxyX图形库中，默认坐标系是，X轴以横向向右为正，Y轴纵向向下为正。</p>
+<h2 id="判定碰撞、吃自身和吃苹果的实现"><a href="#判定碰撞、吃自身和吃苹果的实现" class="headerlink" title="判定碰撞、吃自身和吃苹果的实现"></a>判定碰撞、吃自身和吃苹果的实现</h2><p>这三个操作的实现大同小异所以写一起<br>撞墙思路：</p>
+<ol>
+<li>蛇头依据自身方向算出下一个节点坐标</li>
+<li>判断该节点坐标是否在围墙范围之内，如是则返回假，否则返回真</li>
+</ol>
+<p>代码实现</p>
+<pre><code>bool Snake::hitwall(Wall wall){
+    int xofset[4] = { 0, 0, -1, 1 };
+    int yofset[4] = { -1, 1, 0, 0 };
+    Point prePoint;
+    prePoint.x = body-&gt;next-&gt;data.x;
+    prePoint.y = body-&gt;next-&gt;data.y;
+    prePoint.x += xofset[dir];
+    prePoint.y += yofset[dir];
+    if (prePoint.x &lt; wall.a.x || prePoint.x &gt; wall.b.x-1 || prePoint.y &lt; wall.a.y ||     prePoint.y &gt; wall.b.y-1)
+        return true;
+    return false;
+}
+</code></pre><p>吃自身思路：</p>
+<ol>
+<li>蛇头依据自身方向算出下一个节点坐标</li>
+<li>让蛇身链表与该节点逐个比较，如果发现相同的立马返回真。</li>
+</ol>
+<p>代码实现</p>
+<pre><code>bool Snake::eatItself(){
+int xofset[4] = { 0, 0, -1, 1 };
+int yofset[4] = { -1, 1, 0, 0 };
+Point prePoint;
+prePoint.x = body-&gt;next-&gt;data.x;
+prePoint.y = body-&gt;next-&gt;data.y;
+prePoint.x += xofset[dir];
+prePoint.y += yofset[dir];
+LinkList p = body;
+do{
+    if (p-&gt;next-&gt;data== prePoint)
+        return true;
+    p = p-&gt;next;
+} while (p-&gt;next != NULL);
+return false;
+}
+</code></pre><p>吃苹果思路：</p>
+<ol>
+<li>蛇头依据自身方向算出下一个节点坐标</li>
+<li>让该节点与苹果坐标比较，如果相同则返回真，否则返回假</li>
+</ol>
+<p>代码实现</p>
+<pre><code>bool Snake::tryeat(Apple apple){
+    int xofset[4] = { 0, 0, -1, 1 };
+    int yofset[4] = { -1, 1, 0, 0 };
+    Point prePoint;
+    prePoint.x = body-&gt;next-&gt;data.x;
+    prePoint.y = body-&gt;next-&gt;data.y;
+    prePoint.x += xofset[dir];
+    prePoint.y += yofset[dir];
+    if (prePoint.x == apple.x &amp;&amp; prePoint.y == apple.y){
+        Point apple1 = { apple.x, apple.y };
+        ListInsert(body, 1, apple1);
+        return true;
+    }
+    return false;
+    }
+</code></pre><h2 id="改变蛇方向的实现"><a href="#改变蛇方向的实现" class="headerlink" title="改变蛇方向的实现"></a>改变蛇方向的实现</h2><p>思路：</p>
+<ol>
+<li>依据接收到的按键指令分成两类 上下和左右</li>
+<li>如果是上下，则判断按键指令是否为左右，如是则赋值改变蛇方向，否则不变方向</li>
+<li><p>如果是左右，则判断按键指令是否为上下，如是则赋值改变蛇方向，否则不变方向<br>代码如下</p>
+<p> void Snake::changeDirect(Direct direc){</p>
+<pre><code>switch (dir)
+{
+case up:
+case down:
+    if (direc == left || direc == right)
+        dir = direc;
+    break;
+case left:
+case right:
+    if (direc == up || direc == down)
+        dir = direc;
+    break;
+default:
+    break;
+}
+</code></pre><p> }</p>
+</li>
+</ol>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ol>
+<li>写这个一方面是为了准备下周PPT讲解贪食蛇而梳理一下思路，另一方面是为了练习一下写作，</li>
+<li>还可以熟悉一下写博客的流程，弄着玩。</li>
+<li>还有一个排行榜功能没有实现</li>
+</ol>
+<p>这个博客还可以改进，但是不想再花时间修改了。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>参考知乎上大佬</p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/39597457" target="_blank" rel="noopener">你们要的贪吃蛇C++手把手教学来啦</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/40465852" target="_blank" rel="noopener">你们要的贪吃蛇C++手把手教学来啦（二）</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/20/snake/" data-id="cjopmwxxx0002u4r20dx1al2q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +530,7 @@ default:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/07/27/hello-world/" data-id="cjopi129t0001jwr2zr1we7mj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/07/27/hello-world/" data-id="cjopmwxxr0001u4r2s7bonmjr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +571,11 @@ default:
       <ul>
         
           <li>
-            <a href="/2018/11/20/贪吃蛇/">Gready Snake</a>
+            <a href="/2018/11/20/GreedySnake/">GreedySnake</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/20/snake/">Gready Snake</a>
           </li>
         
           <li>
