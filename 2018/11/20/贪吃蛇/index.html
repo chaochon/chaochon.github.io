@@ -7,20 +7,20 @@
   
   <title>Gready Snake | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
+  <meta name="description" content="贪吃蛇两个问题 如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir另外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gready Snake">
 <meta property="og:url" content="http://yoursite.com/2018/11/20/贪吃蛇/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
+<meta property="og:description" content="贪吃蛇两个问题 如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir另外">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇类图.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/蛇移动.JPG">
 <meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/捕获.PNG">
-<meta property="og:updated_time" content="2018-11-20T08:31:34.269Z">
+<meta property="og:updated_time" content="2018-11-20T08:33:44.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gready Snake">
-<meta name="twitter:description" content="#贪吃蛇 ##两个问题  如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  ##用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动">
+<meta name="twitter:description" content="贪吃蛇两个问题 如何实时的从键盘中读入控制按键，并且蛇及时地响应？ 如何让蛇动起来，形成动画？  用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名##对象主要有四个对象，蛇，苹果，墙，和界面中数据。 蛇类具有两个数据成员，一个是存储蛇身坐标的链表body，一个是蛇运动方向dir另外">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇类图.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -90,13 +90,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#贪吃蛇</p>
-<p>##两个问题</p>
-<ol>
+        <h1 id="贪吃蛇"><a href="#贪吃蛇" class="headerlink" title="贪吃蛇"></a>贪吃蛇</h1><h2 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h2><ol>
 <li>如何实时的从键盘中读入控制按键，并且蛇及时地响应？</li>
 <li>如何让蛇动起来，形成动画？</li>
 </ol>
-<p>##用例<br>主要参与者：一个玩家<br>关注点：希望能够记录成绩，并列在排行榜上<br>主成功场景：</p>
+<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2><p>主要参与者：一个玩家<br>关注点：希望能够记录成绩，并列在排行榜上<br>主成功场景：</p>
 <ol>
 <li>玩家输入ID，游戏进行初始化</li>
 <li>玩家启动游戏，进行游戏活动</li>
