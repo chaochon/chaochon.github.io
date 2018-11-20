@@ -105,7 +105,8 @@
 <li>判断蛇的下一个位置是否吃到苹果，如果是则将苹果头插法加入蛇不移动，随机生成一个新苹果<br>并增加成绩（成绩达到条件就蛇加速），否则就蛇移动一步。</li>
 </ol>
 <p>代码实现如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   void handleLogic()&#123;</span><br><span class="line">	if (GameOver)</span><br><span class="line">		return;</span><br><span class="line">	/*判断下一位置是否吃到自己或者撞墙*/</span><br><span class="line">	if (snake.eatItself() || snake.hitwall(wall))&#123;</span><br><span class="line">		GameOver = true;</span><br><span class="line">	&#125;</span><br><span class="line">	if (snake.tryeat(apple))&#123;</span><br><span class="line">		apple.newApple();</span><br><span class="line">		ui.inc();</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		snake.move();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="蛇移动的实现"><a href="#蛇移动的实现" class="headerlink" title="蛇移动的实现"></a>蛇移动的实现</h2><p>蛇的移动如下图所示<br><img src="/2018/11/20/GreedySnake/move.jpg" alt="ater"></p>
+<h2 id="蛇移动的实现"><a href="#蛇移动的实现" class="headerlink" title="蛇移动的实现"></a>蛇移动的实现</h2><p>蛇的移动如下图所示</p>
+<p><img src="/2018/11/20/GreedySnake/move.jpg" alt="ater"></p>
 <p>思路：</p>
 <ol>
 <li>头节点依照自身的方向移动一格</li>
@@ -138,7 +139,7 @@
 <li>如果是左右，则判断按键指令是否为上下，如是则赋值改变蛇方向，否则不变方向<br>代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   void Snake::changeDirect(Direct direc)&#123;</span><br><span class="line">	switch (dir)</span><br><span class="line">	&#123;</span><br><span class="line">	case up:</span><br><span class="line">	case down:</span><br><span class="line">		if (direc == left || direc == right)</span><br><span class="line">			dir = direc;</span><br><span class="line">		break;</span><br><span class="line">	case left:</span><br><span class="line">	case right:</span><br><span class="line">		if (direc == up || direc == down)</span><br><span class="line">			dir = direc;</span><br><span class="line">		break;</span><br><span class="line">	default:</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="/2018/11/20/GreedySnake/result.png" alt="ater"></p>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="/2018/11/20/GreedySnake/result.png" alt="ater1"></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ol>
 <li>写这个一方面是为了准备下周PPT讲解贪食蛇而梳理一下思路，另一方面是为了练习一下写作，</li>
 <li>还可以熟悉一下写博客的流程，弄着玩。</li>
