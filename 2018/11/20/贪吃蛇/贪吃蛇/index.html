@@ -101,16 +101,16 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="贪吃蛇用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名  关键问题 如何实时接收按键控制？ 如何让蛇动起来，形成动画？ 排行榜信息如何才能不随着程序结束而消失？对象主要有五个对象，蛇，苹果，墙，界面信息和排行榜。 蛇类具有两个数据成员，一个是存储蛇身坐标信息的链表body，一个是蛇">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/class.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/map.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/move1.JPG">
-<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/move2.JPG">
-<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/result.JPG">
-<meta property="og:updated_time" content="2018-11-24T13:20:49.963Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/class.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/map.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/move1.JPG">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/move2.JPG">
+<meta property="og:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/result.JPG">
+<meta property="og:updated_time" content="2018-11-24T13:36:08.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GreedySnake">
 <meta name="twitter:description" content="贪吃蛇用例主要参与者：一个玩家关注点：希望能够记录成绩，并列在排行榜上主成功场景：  玩家输入ID，游戏进行初始化 玩家启动游戏，进行游戏活动 游戏结束，显示玩家成绩的排名  关键问题 如何实时接收按键控制？ 如何让蛇动起来，形成动画？ 排行榜信息如何才能不随着程序结束而消失？对象主要有五个对象，蛇，苹果，墙，界面信息和排行榜。 蛇类具有两个数据成员，一个是存储蛇身坐标信息的链表body，一个是蛇">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/class.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/20/贪吃蛇/贪吃蛇/贪吃蛇/class.jpg">
 
 
 
@@ -349,7 +349,7 @@
 <li>苹果类具有一个坐标（x,y）数据成员，具有一个随机产生一个新苹果newApple操作</li>
 <li>墙类具有两个点数据成员，用来限定一个矩形的蛇运动范围</li>
 <li>ui类具有一个游戏难度等级和分数的数据成员，还有一个自增分数和游戏难度的操作inc。</li>
-<li>排行榜类没有数据成员，排名信息都存储在afile.dat文件中，另外有一个将成绩写入排行榜的操作<br>类图<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./class.jpg" alt="Alt text"><h2 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h2>地图如下<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./map.jpg" alt="Alt text"></li>
+<li>排行榜类没有数据成员，排名信息都存储在afile.dat文件中，另外有一个将成绩写入排行榜的操作<br>类图<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./贪吃蛇/class.jpg" alt="Alt text"><h2 id="地图"><a href="#地图" class="headerlink" title="地图"></a>地图</h2>地图如下<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./贪吃蛇/map.jpg" alt="Alt text"></li>
 </ol>
 <p>左边是游戏信息界面，右边是蛇运动范围，一个480*480的矩形</p>
 <h2 id="主程序框架"><a href="#主程序框架" class="headerlink" title="主程序框架"></a>主程序框架</h2><p>main函数来说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">    initGame();//初始化游戏</span><br><span class="line">    do&#123;</span><br><span class="line">	    keybordControl();//按键控制</span><br><span class="line">	    handlelogic();//处理游戏逻辑</span><br><span class="line">	    draw();//绘图</span><br><span class="line">	    sleep(10);//控制帧率</span><br><span class="line">	 &#125;while(isGameRuning);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -363,7 +363,7 @@
 </ol>
 <p><strong>代码实现</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   void handleLogic()&#123;</span><br><span class="line">	if (GameOver)</span><br><span class="line">		return;</span><br><span class="line">	/*判断下一位置是否吃到自己或者撞墙*/</span><br><span class="line">	if (snake.eatItself() || snake.hitwall(wall))&#123;</span><br><span class="line">		rrank.write(ui.score);</span><br><span class="line">		GameOver = true;</span><br><span class="line">	&#125;</span><br><span class="line">	if (snake.tryeat(apple))&#123;</span><br><span class="line">		apple.newApple();</span><br><span class="line">		ui.inc();</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		snake.move();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="让蛇移动起来和吃到苹果就长"><a href="#让蛇移动起来和吃到苹果就长" class="headerlink" title="让蛇移动起来和吃到苹果就长"></a>让蛇移动起来和吃到苹果就长</h2><p>蛇的移动如下图所示</p>
-<p><img src="/2018/11/20/贪吃蛇/贪吃蛇/./move1.JPG" alt="Alt text"></p>
+<p><img src="/2018/11/20/贪吃蛇/贪吃蛇/./贪吃蛇/move1.JPG" alt="Alt text"></p>
 <p>思路：</p>
 <ol>
 <li>头节点依照自身的方向移动一格</li>
@@ -371,7 +371,7 @@
 </ol>
 <p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">   void Snake::move()&#123;</span><br><span class="line">	int xofset[4] = &#123; 0, 0, -1, 1 &#125;;</span><br><span class="line">	int yofset[4] = &#123; -1, 1, 0, 0 &#125;;</span><br><span class="line">	/*控制游戏速度*/</span><br><span class="line">	int intervalTime = 100 - Speed;</span><br><span class="line">	static int lastMoveTick = 0;</span><br><span class="line">	int curTicktime = GetTickCount();</span><br><span class="line">	if (curTicktime - lastMoveTick &lt; intervalTime)&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	lastMoveTick = curTicktime;</span><br><span class="line">	/*控制游戏速度end*/</span><br><span class="line">	LinkList p = body;</span><br><span class="line">	int prex = p-&gt;next-&gt;data.x;</span><br><span class="line">	int prey = p-&gt;next-&gt;data.y;</span><br><span class="line"></span><br><span class="line">	p-&gt;next-&gt;data.x += xofset[dir];</span><br><span class="line">	p-&gt;next-&gt;data.y += yofset[dir];</span><br><span class="line">	p = p-&gt;next;</span><br><span class="line">	do&#123;</span><br><span class="line">		int curx = p-&gt;next-&gt;data.x;</span><br><span class="line">		int cury = p-&gt;next-&gt;data.y;</span><br><span class="line">		p-&gt;next-&gt;data.x = prex;</span><br><span class="line">		p-&gt;next-&gt;data.y = prey;</span><br><span class="line">		prex = curx;</span><br><span class="line">		prey = cury;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125; while (p-&gt;next != NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>注意在EaxyX图形库中，默认坐标系是，X轴以横向向右为正，Y轴纵向向下为正。</p>
-<p><strong>考虑移动过程中吃到苹果变长的情况</strong><br>如图<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./move2.JPG" alt="Alt text"></p>
+<p><strong>考虑移动过程中吃到苹果变长的情况</strong><br>如图<br><img src="/2018/11/20/贪吃蛇/贪吃蛇/./贪吃蛇/move2.JPG" alt="Alt text"></p>
 <p>蛇移动一格后，原本蛇尾位置朝前一个位置移动，但是由于吃到苹果蛇身变长蛇尾位置不变。<br>从示意图中明显地可以看到，我们只要简单地保持蛇身不动，用头插法的方式将苹果加入到<br>蛇身链表中即可。</p>
 <p><strong>思路：</strong></p>
 <ol>
@@ -414,7 +414,7 @@
 <li>顺序输出data的数据<br>比较麻烦就是EasyX库要求用字符串输出，data数据为整型需要转换成TCHAR型。<br><strong>代码实现</strong></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">void Rank::draw()&#123;</span><br><span class="line">	TCHAR str[10] = _T(&quot;排行榜&quot;);</span><br><span class="line">	outtextxy(50, 200, str);</span><br><span class="line">	TCHAR str1[10] = _T(&quot;第一名：&quot;),str11[10];</span><br><span class="line">	TCHAR str2[10] = _T(&quot;第二名：&quot;), str22[10];</span><br><span class="line">	TCHAR str3[10] = _T(&quot;第三名：&quot;), str33[10];</span><br><span class="line">	TCHAR str4[10] = _T(&quot;第四名：&quot;), str44[10];</span><br><span class="line">	TCHAR str5[10] = _T(&quot;第五名：&quot;),str55[10];</span><br><span class="line"></span><br><span class="line">	TCHAR *ptr[N] = &#123;str1,str2,str3,str4,str5&#125;;//指针数组</span><br><span class="line">	TCHAR *ptr1[N] = &#123; str11, str22, str33, str44, str55 &#125;;</span><br><span class="line">	ifstream infile;</span><br><span class="line">	infile.open(&quot;afile.dat&quot;, ios::in);</span><br><span class="line">	int data[N] = &#123; 0 &#125;;</span><br><span class="line">	for (int i = 0; i &lt; N; i++)&#123;</span><br><span class="line">		infile &gt;&gt; data[i];</span><br><span class="line">	&#125;</span><br><span class="line">	BubbleSort(data, N);</span><br><span class="line">	_stprintf_s(str11, _T(&quot;%d&quot;), data[0]);</span><br><span class="line">	_stprintf_s(str22, _T(&quot;%d&quot;), data[1]);</span><br><span class="line">	_stprintf_s(str33, _T(&quot;%d&quot;), data[2]);</span><br><span class="line">	_stprintf_s(str44, _T(&quot;%d&quot;), data[3]);</span><br><span class="line">	_stprintf_s(str55, _T(&quot;%d&quot;), data[4]);</span><br><span class="line">	for (int i = 0; i &lt; N; i++)&#123;</span><br><span class="line">		lstrcat(ptr[i], ptr1[i]);</span><br><span class="line">		outtextxy(50, 250+50*i, ptr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="游戏运行截图"><a href="#游戏运行截图" class="headerlink" title="游戏运行截图"></a>游戏运行截图</h2><p><img src="/2018/11/20/贪吃蛇/贪吃蛇/./result.JPG" alt="Alt text"></p>
+<h2 id="游戏运行截图"><a href="#游戏运行截图" class="headerlink" title="游戏运行截图"></a>游戏运行截图</h2><p><img src="/2018/11/20/贪吃蛇/贪吃蛇/./贪吃蛇/result.JPG" alt="Alt text"></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ol>
 <li>写这个一方面是为了准备下周PPT讲解贪食蛇而梳理一下思路，另一方面是为了练习一下写作，</li>
 <li>还可以熟悉一下写博客的流程，弄着玩。</li>
