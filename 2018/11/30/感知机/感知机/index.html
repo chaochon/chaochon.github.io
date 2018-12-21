@@ -101,12 +101,10 @@
 <meta property="og:site_name" content="阿冲的博客">
 <meta property="og:description" content="感知机1.模型$$ f(x) = sign(wx+b) $$其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数 2.策略损失函数为误分类点到超平面S的总距离。模型经验风险函数为所有误分类点到超平面的总距离，即$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$ 3.算法核心思想：采用随机梯度下降法 算法的原始形式 输入：训练">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/11/30/感知机/感知机/class.JPG">
-<meta property="og:updated_time" content="2018-12-21T15:12:37.868Z">
+<meta property="og:updated_time" content="2018-12-21T15:17:17.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="感知机">
 <meta name="twitter:description" content="感知机1.模型$$ f(x) = sign(wx+b) $$其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数 2.策略损失函数为误分类点到超平面S的总距离。模型经验风险函数为所有误分类点到超平面的总距离，即$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$ 3.算法核心思想：采用随机梯度下降法 算法的原始形式 输入：训练">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/30/感知机/感知机/class.JPG">
 
 
 
@@ -341,7 +339,7 @@
 <li>转至2从新开始选取数据点来判断，直至训练集中没有误分类点</li>
 </ol>
 <h2 id="4-matlab实现代码"><a href="#4-matlab实现代码" class="headerlink" title="4.matlab实现代码"></a>4.matlab实现代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">clc;</span><br><span class="line">clear;</span><br><span class="line">%% 导入数据</span><br><span class="line">data = xlsread(&apos;E:\Learning machine\感知机\trianData.xlsx&apos;,&apos;Sheet1&apos;);</span><br><span class="line">T = data;%训练数据集</span><br><span class="line">clearvars data raw;</span><br><span class="line">[N,~] = size(T);</span><br><span class="line">w = [0 0]&apos;;</span><br><span class="line">b = 0;</span><br><span class="line">alpha = 1;</span><br><span class="line">n = 1;</span><br><span class="line">while(n&lt;=N)</span><br><span class="line">    y = T(n,end);</span><br><span class="line">    x = T(n,1:2);</span><br><span class="line">    x = x&apos;;</span><br><span class="line">    if(y*(dot(w,x)+b)&lt;=0)</span><br><span class="line">        w = w + alpha*y*x;</span><br><span class="line">        b = b + alpha*y;</span><br><span class="line">        n = 1;</span><br><span class="line">    end</span><br><span class="line">    n=n+1;</span><br><span class="line">end</span><br><span class="line">%% 画出训练数据点</span><br><span class="line">hold on</span><br><span class="line">for n = 1:N</span><br><span class="line">   if(T(n,3)==-1)</span><br><span class="line">       plot(T(n,1),T(n,2),&apos;*b&apos;)</span><br><span class="line">   else</span><br><span class="line">       plot(T(n,1),T(n,2),&apos;or&apos;)</span><br><span class="line">   end</span><br><span class="line">end</span><br><span class="line">axis([0 5 0 5]);</span><br><span class="line">%% 画出分离超品面</span><br><span class="line">xx = 0:0.2:5;</span><br><span class="line">yy = (w(1)*xx+b)/(-w(2));</span><br><span class="line">plot(xx,yy)</span><br></pre></td></tr></table></figure>
-<h2 id="5-运行截图"><a href="#5-运行截图" class="headerlink" title="5.运行截图"></a>5.运行截图</h2><p><img src="/2018/11/30/感知机/感知机/./class.JPG" alt="Alt text"></p>
+<h2 id="5-运行截图"><a href="#5-运行截图" class="headerlink" title="5.运行截图"></a>5.运行截图</h2><p>i<a href="./class.JPG">Alt text</a></p>
 
       
     </div>
