@@ -96,26 +96,28 @@
 
 
 
-  <meta name="description" content="感知机1.模型$$ f(x) = sign(wx+b) $$其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数 2.策略损失函数为误分类点到超平面S的总距离。模型经验风险函数为所有误分类点到超平面的总距离，即$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$ 3.算法核心思想：采用随机梯度下降法 算法的原始形式 输入：训练">
+  <meta name="description" content="二项Logistic回归模型1. Logistic函数Logistic函数如下式:$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。函数图形如下 2. 二项Logistic回归模型二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输">
 <meta property="og:type" content="article">
-<meta property="og:title" content="感知机">
-<meta property="og:url" content="http://yoursite.com/2018/11/30/感知机/感知机/index.html">
+<meta property="og:title" content="阿冲的博客">
+<meta property="og:url" content="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/index.html">
 <meta property="og:site_name" content="阿冲的博客">
-<meta property="og:description" content="感知机1.模型$$ f(x) = sign(wx+b) $$其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数 2.策略损失函数为误分类点到超平面S的总距离。模型经验风险函数为所有误分类点到超平面的总距离，即$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$ 3.算法核心思想：采用随机梯度下降法 算法的原始形式 输入：训练">
+<meta property="og:description" content="二项Logistic回归模型1. Logistic函数Logistic函数如下式:$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。函数图形如下 2. 二项Logistic回归模型二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/11/30/感知机/感知机/class.JPG">
-<meta property="og:updated_time" content="2019-01-21T13:00:02.408Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型%20(1)/二项Logistic回归模型/函数图形1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型%20(1)/二项Logistic回归模型/函数图形2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型%20(1)/二项Logistic回归模型/模型图形.jpg">
+<meta property="og:updated_time" content="2019-02-14T14:52:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="感知机">
-<meta name="twitter:description" content="感知机1.模型$$ f(x) = sign(wx+b) $$其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数 2.策略损失函数为误分类点到超平面S的总距离。模型经验风险函数为所有误分类点到超平面的总距离，即$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$ 3.算法核心思想：采用随机梯度下降法 算法的原始形式 输入：训练">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/30/感知机/感知机/class.JPG">
+<meta name="twitter:title" content="阿冲的博客">
+<meta name="twitter:description" content="二项Logistic回归模型1. Logistic函数Logistic函数如下式:$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。函数图形如下 2. 二项Logistic回归模型二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型%20(1)/二项Logistic回归模型/函数图形1.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/30/感知机/感知机/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/"/>
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>感知机 | 阿冲的博客</title>
+  <title> | 阿冲的博客</title>
   
 
 
@@ -294,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/感知机/感知机/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="achong"/>
@@ -311,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">感知机
+          <h1 class="post-title" itemprop="name headline">
 
               
             
@@ -337,24 +339,12 @@
                 
               
 
-              <time title="创建时间：2018-11-30 22:53:17" itemprop="dateCreated datePublished" datetime="2018-11-30T22:53:17+08:00">2018-11-30</time>
+              <time title="创建时间：2019-02-14 22:54:43 / 修改时间：22:52:38" itemprop="dateCreated datePublished" datetime="2019-02-14T22:54:43+08:00">2019-02-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-21 21:00:02" itemprop="dateModified" datetime="2019-01-21T21:00:02+08:00">2019-01-21</time>
               
             
           </span>
@@ -371,8 +361,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2018/11/30/感知机/感知机/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/30/感知机/感知机/" itemprop="commentCount"></span>
+                <a href="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,17 +390,9 @@
       
 
       
-        <h1 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h1><h2 id="1-模型"><a href="#1-模型" class="headerlink" title="1.模型"></a>1.模型</h2><p>$$ f(x) = sign(wx+b) $$<br>其中，w和b为感知机模型参数，w为特征向量的权向量，x为数据点的特征向量，b为偏置，标量。sign为符号函数</p>
-<h2 id="2-策略"><a href="#2-策略" class="headerlink" title="2.策略"></a>2.策略</h2><p>损失函数为误分类点到超平面S的总距离。<br>模型经验风险函数为所有误分类点到超平面的总距离，即<br>$$ L(w,b)=\sum y_i(w\cdot x_i+b)$$</p>
-<h2 id="3-算法"><a href="#3-算法" class="headerlink" title="3.算法"></a>3.算法</h2><p>核心思想：采用随机梯度下降法<br> 算法的原始形式<br> 输入：训练集T<br> 输出:  感知机模型参数 w,b</p>
-<ol>
-<li>选取初值$w_0 b_0$</li>
-<li>在训练集中选取一个数据点</li>
-<li>如果$y_i(w\cdot x+b)&lt;=0$<br>更新模型参数w,b</li>
-<li>转至2从新开始选取数据点来判断，直至训练集中没有误分类点</li>
-</ol>
-<h2 id="4-matlab实现代码"><a href="#4-matlab实现代码" class="headerlink" title="4.matlab实现代码"></a>4.matlab实现代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">clc;</span><br><span class="line">clear;</span><br><span class="line">%% 导入数据</span><br><span class="line">data = xlsread(&apos;E:\Learning machine\感知机\trianData.xlsx&apos;,&apos;Sheet1&apos;);</span><br><span class="line">T = data;%训练数据集</span><br><span class="line">clearvars data raw;</span><br><span class="line">[N,~] = size(T);</span><br><span class="line">w = [0 0]&apos;;</span><br><span class="line">b = 0;</span><br><span class="line">alpha = 1;</span><br><span class="line">n = 1;</span><br><span class="line">while(n&lt;=N)</span><br><span class="line">    y = T(n,end);</span><br><span class="line">    x = T(n,1:2);</span><br><span class="line">    x = x&apos;;</span><br><span class="line">    if(y*(dot(w,x)+b)&lt;=0)</span><br><span class="line">        w = w + alpha*y*x;</span><br><span class="line">        b = b + alpha*y;</span><br><span class="line">        n = 1;</span><br><span class="line">    end</span><br><span class="line">    n=n+1;</span><br><span class="line">end</span><br><span class="line">%% 画出训练数据点</span><br><span class="line">hold on</span><br><span class="line">for n = 1:N</span><br><span class="line">   if(T(n,3)==-1)</span><br><span class="line">       plot(T(n,1),T(n,2),&apos;*b&apos;)</span><br><span class="line">   else</span><br><span class="line">       plot(T(n,1),T(n,2),&apos;or&apos;)</span><br><span class="line">   end</span><br><span class="line">end</span><br><span class="line">axis([0 5 0 5]);</span><br><span class="line">%% 画出分离超品面</span><br><span class="line">xx = 0:0.2:5;</span><br><span class="line">yy = (w(1)*xx+b)/(-w(2));</span><br><span class="line">plot(xx,yy)</span><br></pre></td></tr></table></figure>
-<h2 id="5-运行截图"><a href="#5-运行截图" class="headerlink" title="5.运行截图"></a>5.运行截图</h2><p><img src="/2018/11/30/感知机/感知机/./class.JPG" alt="Alt text"></p>
+        <h1 id="二项Logistic回归模型"><a href="#二项Logistic回归模型" class="headerlink" title="二项Logistic回归模型"></a>二项Logistic回归模型</h1><h2 id="1-Logistic函数"><a href="#1-Logistic函数" class="headerlink" title="1. Logistic函数"></a>1. Logistic函数</h2><p>Logistic函数如下式:<br>$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$<br>x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。<br>函数图形如下<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./函数图形1.jpg" alt="Alt text"><br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./函数图形2.jpg" alt="Alt text"></p>
+<h2 id="2-二项Logistic回归模型"><a href="#2-二项Logistic回归模型" class="headerlink" title="2. 二项Logistic回归模型"></a>2. 二项Logistic回归模型</h2><p>二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输出为1或0。模型的关键是条件概率分布，如下所示<br>$$ P(Y=1|x)=\frac{e^{w\cdot x+b}}{1+e^{w\cdot x+b}}  $$<br>$$ P(Y=0|x)=\frac{1}{1+e^{w\cdot x+b}}  $$<br>$x$为n为特征向量，$w$为n维权向量，$b$为标量偏置。<br>为了作图表示方便，设特征向量是一维的<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./模型图形.jpg" alt="Alt text"><br>对于给定的输入$x$，按照概率分布分布求出$P(Y=1|x),P(Y=0|x)$，取概率最大的分类作为输出。<br>另一个角度来看模型，$w\cdot x+b$是线性函数，经过Logistc函数转变为概率分布。已知线性函数本身也可以进行分类，所以说Logistic模型实际上将线性模型用Logistic函数进行改进，化为概率分布表示。</p>
+<h2 id="3-极大似然法估计模型参数"><a href="#3-极大似然法估计模型参数" class="headerlink" title="3. 极大似然法估计模型参数"></a>3. 极大似然法估计模型参数</h2><p>设给定训练数据集$T={(x_{1},y_{1}),(x_{2},y_{2}),…,(x_{N},y_{N})} $<br>设$P(Y=1|x)=\pi(x),    P(Y=0|x)=1-\pi(x)$<br>似然函数就每一组训练数据成立时其概率的函数：<br>$$ \prod_{i=1}^{N}[\pi(x_i)]^{y_i}[1-\pi(x_i)]^{1-y_i} $$<br>其对数似然函数为<br>$$ L(w)=\sum_{i=1}^{N}[y_i(w_i\cdot x)-log(1+e^{w_i\cdot x})] $$<br>在利用梯度下降法或者拟牛顿法对L(w)求极值，得到w的估计值。</p>
 
       
     </div>
@@ -441,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/20/贪吃蛇/贪吃蛇/" rel="next" title="GreedySnake">
-                <i class="fa fa-chevron-left"></i> GreedySnake
+              <a href="/2019/01/21/朴素贝叶斯法/朴素贝叶斯法/" rel="next" title="朴素贝叶斯法">
+                <i class="fa fa-chevron-left"></i> 朴素贝叶斯法
               </a>
             
           </div>
@@ -450,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/29/leetcode/无重复字符的最长字串/" rel="prev" title="leetcode笔记">
-                leetcode笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#感知机"><span class="nav-number">1.</span> <span class="nav-text">感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-模型"><span class="nav-number">1.1.</span> <span class="nav-text">1.模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-策略"><span class="nav-number">1.2.</span> <span class="nav-text">2.策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-算法"><span class="nav-number">1.3.</span> <span class="nav-text">3.算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-matlab实现代码"><span class="nav-number">1.4.</span> <span class="nav-text">4.matlab实现代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-运行截图"><span class="nav-number">1.5.</span> <span class="nav-text">5.运行截图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二项Logistic回归模型"><span class="nav-number">1.</span> <span class="nav-text">二项Logistic回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Logistic函数"><span class="nav-number">1.1.</span> <span class="nav-text">1. Logistic函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二项Logistic回归模型"><span class="nav-number">1.2.</span> <span class="nav-text">2. 二项Logistic回归模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-极大似然法估计模型参数"><span class="nav-number">1.3.</span> <span class="nav-text">3. 极大似然法估计模型参数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -808,43 +786,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow: auto hidden;
-}
-</style>
-
-    
   
 
 
