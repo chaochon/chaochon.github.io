@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="achong"/>
@@ -312,7 +312,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/" class="post-title-link" itemprop="url">二项Logistic回归模型</a>
+                <a href="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/" class="post-title-link" itemprop="url">二项Logistic回归模型</a>
               
             
           </h1>
@@ -359,8 +359,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/" itemprop="commentCount"></span>
+                <a href="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,8 +390,8 @@
       
         
           
-            <h1 id="二项Logistic回归模型"><a href="#二项Logistic回归模型" class="headerlink" title="二项Logistic回归模型"></a>二项Logistic回归模型</h1><h2 id="1-Logistic函数"><a href="#1-Logistic函数" class="headerlink" title="1. Logistic函数"></a>1. Logistic函数</h2><p>Logistic函数如下式:<br>$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$<br>x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。<br>函数图形如下<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./函数图形1.jpg" alt="Alt text"><br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./函数图形2.jpg" alt="Alt text"></p>
-<h2 id="2-二项Logistic回归模型"><a href="#2-二项Logistic回归模型" class="headerlink" title="2. 二项Logistic回归模型"></a>2. 二项Logistic回归模型</h2><p>二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输出为1或0。模型的关键是条件概率分布，如下所示<br>$$ P(Y=1|x)=\frac{e^{w\cdot x+b}}{1+e^{w\cdot x+b}}  $$<br>$$ P(Y=0|x)=\frac{1}{1+e^{w\cdot x+b}}  $$<br>$x$为n为特征向量，$w$为n维权向量，$b$为标量偏置。<br>为了作图表示方便，设特征向量是一维的<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型 (1)/二项Logistic回归模型/./模型图形.jpg" alt="Alt text"><br>对于给定的输入$x$，按照概率分布分布求出$P(Y=1|x),P(Y=0|x)$，取概率最大的分类作为输出。<br>另一个角度来看模型，$w\cdot x+b$是线性函数，经过Logistc函数转变为概率分布。已知线性函数本身也可以进行分类，所以说Logistic模型实际上将线性模型用Logistic函数进行改进，化为概率分布表示。</p>
+            <h1 id="二项Logistic回归模型"><a href="#二项Logistic回归模型" class="headerlink" title="二项Logistic回归模型"></a>二项Logistic回归模型</h1><h2 id="1-Logistic函数"><a href="#1-Logistic函数" class="headerlink" title="1. Logistic函数"></a>1. Logistic函数</h2><p>Logistic函数如下式:<br>$$  f(x)=\frac{1}{1+e^{-(x-u)/\gamma }}  $$<br>x 为函数自变量，$u,\gamma$为函数参数，前者控制函数位置，后者控制函数形状。<br>函数图形如下<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/./函数图形1.jpg" alt="Alt text"><br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/./函数图形2.jpg" alt="Alt text"></p>
+<h2 id="2-二项Logistic回归模型"><a href="#2-二项Logistic回归模型" class="headerlink" title="2. 二项Logistic回归模型"></a>2. 二项Logistic回归模型</h2><p>二项Logistic回归模型是一种以条件概率$P(y | x)$表示的二分类模型，其输入为实数，输出为1或0。模型的关键是条件概率分布，如下所示<br>$$ P(Y=1|x)=\frac{e^{w\cdot x+b}}{1+e^{w\cdot x+b}}  $$<br>$$ P(Y=0|x)=\frac{1}{1+e^{w\cdot x+b}}  $$<br>$x$为n为特征向量，$w$为n维权向量，$b$为标量偏置。<br>为了作图表示方便，设特征向量是一维的<br><img src="/2019/02/14/二项Logistic回归模型/二项Logistic回归模型/二项Logistic回归模型/./模型图形.jpg" alt="Alt text"><br>对于给定的输入$x$，按照概率分布分布求出$P(Y=1|x),P(Y=0|x)$，取概率最大的分类作为输出。<br>另一个角度来看模型，$w\cdot x+b$是线性函数，经过Logistc函数转变为概率分布。已知线性函数本身也可以进行分类，所以说Logistic模型实际上将线性模型用Logistic函数进行改进，化为概率分布表示。</p>
 <h2 id="3-极大似然法估计模型参数"><a href="#3-极大似然法估计模型参数" class="headerlink" title="3. 极大似然法估计模型参数"></a>3. 极大似然法估计模型参数</h2><p>设给定训练数据集$T={(x_{1},y_{1}),(x_{2},y_{2}),…,(x_{N},y_{N})} $<br>设$P(Y=1|x)=\pi(x),    P(Y=0|x)=1-\pi(x)$<br>似然函数就每一组训练数据成立时其概率的函数：<br>$$ \prod_{i=1}^{N}[\pi(x_i)]^{y_i}[1-\pi(x_i)]^{1-y_i} $$<br>其对数似然函数为<br>$$ L(w)=\sum_{i=1}^{N}[y_i(w_i\cdot x)-log(1+e^{w_i\cdot x})] $$<br>在利用梯度下降法或者拟牛顿法对L(w)求极值，得到w的估计值。</p>
 
           
